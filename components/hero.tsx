@@ -11,10 +11,10 @@ export function Hero() {
   const [dialogOpen, setDialogOpen] = useState(false)
 
   return (
-    <div className="flex flex-col h-svh justify-between">
+    <div className="flex flex-col h-svh">
       <GL hovering={hovering} />
 
-      <div className="pb-16 mt-auto text-center relative">
+      <div className="pt-32 md:pt-44 pb-16 text-center relative">
         <Pill>COMING SOON</Pill>
 
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient mt-6">
