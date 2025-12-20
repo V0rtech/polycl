@@ -21,7 +21,7 @@ export function Hero() {
           Polymarket edge, <br />
           <i className="font-light">quantified.</i>
         </h1>
-        <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[480px] mx-auto">
+        <p className="font-mono text-sm sm:text-base text-balance mt-8 max-w-[480px] mx-auto">
           Institutional-grade analytics for prediction markets.
         </p>
 
