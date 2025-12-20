@@ -16,10 +16,26 @@ export function WaitlistDialog({ open, onOpenChange }: WaitlistDialogProps) {
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Connect to your waitlist backend
-    setSubmitted(true)
+    
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        // Handle error (optional: add error state)
+        const data = await response.json()
+        console.error(data.error)
+      }
+    } catch (error) {
+      console.error('Failed to submit:', error)
+    }
   }
 
   const handleClose = () => {
